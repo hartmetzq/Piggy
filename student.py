@@ -60,9 +60,9 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         
-    self.fwd()
-    time.sleep(2)
-    self.stop()
+        self.fwd()
+        time.sleep(2)
+        self.stop()
 
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
