@@ -59,9 +59,9 @@ class Piggy(PiggyParent):
     def dance(self):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
-    
+        self.chacha_slide()
         self.backward_shuffle()
-        self.forward_shuffle()
+        
         
         # New Dance 
             #self.chacha_slide ()
@@ -101,13 +101,7 @@ class Piggy(PiggyParent):
         self.turn_by_deg(180)
         time.sleep(.1)
         self.stop()
-    def forward_shuffle(self):
-        for x in range(12):
-            self.right(primary=0, counter=-60)
-            time.sleep(.1)
-            self.left(primary=0, counter=-60)
-            time.sleep(.1)
-        self.stop()
+   
 
 
 
