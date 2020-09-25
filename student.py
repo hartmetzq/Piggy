@@ -60,6 +60,7 @@ class Piggy(PiggyParent):
         """A higher-ordered algorithm to make your robot dance"""
         # TODO: check to see if it's safe before dancing
         self.chacha_slide()
+        self.backward_shuffle()
         
         # New Dance 
             #self.chacha_slide ()
