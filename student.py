@@ -73,23 +73,23 @@ class Piggy(PiggyParent):
     def chacha_slide(self):
         for x in range(1):
             self.turn_to_deg(90)
-            time.sleep(.5)
+            time.sleep(.1)
             self.back()
-            time.sleep(.5)
+            time.sleep(.1)
             self.turn_by_deg(270)
-            time.sleep(.5)
+            time.sleep(.1)
             self.turn_by_deg(270)
-            time.sleep(.5)
+            time.sleep(.1)
             self.turn_to_deg(90)
-            time.sleep(.5)
+            time.sleep(.1)
             self.back()
-            time.sleep(.5)
+            time.sleep(.1)
             self.turn_by_deg(180)
-            time.sleep(.5)
+            time.sleep(.1)
             self.turn_by_deg(180)
-            time.sleep(.5)
+            time.sleep(.1)
             self.fwd()
-            time.sleep(.5)
+            time.sleep(.1)
             self.stop()
 
     def backward_shuffle(self):
@@ -99,6 +99,12 @@ class Piggy(PiggyParent):
             self.left(primary=-60, counter=0)
             time.sleep(.1)
         self.turn_by_deg(180)
+        for x in range(12):
+            self.right(primary=-60, counter=0)
+            time.sleep(.1)
+            self.left(primary=-60, counter=0)
+            time.sleep(.1)
+
         time.sleep(.1)
         self.stop()
    
