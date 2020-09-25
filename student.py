@@ -61,6 +61,7 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
     
         self.backward_shuffle()
+        self.forward_shuffle()
         
         # New Dance 
             #self.chacha_slide ()
@@ -98,6 +99,15 @@ class Piggy(PiggyParent):
             self.left(primary=-60, counter=0)
             time.sleep(.1)
         self.stop()
+    def forward_shuffle(self):
+        for x in range(12):
+            self.right(primary=0, counter=-60)
+            time.sleep(.1)
+            self.left(primary=0, counter=-60)
+            time.sleep(.1)
+        self.stop()
+
+
 
 
             
