@@ -61,28 +61,33 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         self.twist_move()
         # New Dance 
-            #self.twist()
+            #self.chacha_slide ()
             #self.backward_shuffle()
             #self.twist_otherway()
             #self.forward_shuffle()
             #self.headwhip()
 
-    def twist_move(self):
-        for x in range(3):
-            self.fwd()
-            time.sleep(1)
-            self.right(primary=100, counter=-100)
-            time.sleep(.2)
-            self.right(primary=100, counter=-100)
+    def chacha_slide(self):
+        for x in range():
+            self.turn_to_deg(90)
             time.sleep(.5)
             self.back()
-            time.sleep(1)
+            time.sleep(.5)
             self.right(primary=50, counter=-50)
-            time.sleep(.2)
+            time.sleep(.5)
+            self.left(primary=50, counter=-50)
+            time.sleep(.5)
+            self.turn_to_deg(90)
+            time.sleep(.5)
+            self.back()
+            time.sleep(.5)
+            self.left(primary=50, counter=-50) 
+            time.sleep(.5)
             self.right(primary=50, counter=-50)
-            time.sleep(2)
+            time.sleep(.5)
             self.stop()
-    
+
+            
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
         pass
