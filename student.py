@@ -90,6 +90,15 @@ class Piggy(PiggyParent):
             time.sleep(.5)
             self.stop()
 
+    def backward_shuffle(self):
+        for x in range(6):
+            self.right(primary=-60, counter=0)
+            time.sleep(.1)
+            self.left(primary=-60, counter=0)
+            time.sleep(.1)
+        self.stop()
+
+
             
     def safe_to_dance(self):
         """ Does a 360 distance check and returns true if safe """
