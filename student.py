@@ -98,6 +98,8 @@ class Piggy(PiggyParent):
             time.sleep(.1)
             self.left(primary=-60, counter=0)
             time.sleep(.1)
+        self.turn_by_deg(180)
+        time.sleep(.1)
         self.stop()
     def forward_shuffle(self):
         for x in range(12):
