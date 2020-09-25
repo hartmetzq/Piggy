@@ -69,7 +69,7 @@ class Piggy(PiggyParent):
             #self.headwhip()
 
     def chacha_slide(self):
-        for x in range():
+        for x in range(1):
             self.turn_to_deg(90)
             time.sleep(.5)
             self.back()
