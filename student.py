@@ -66,11 +66,12 @@ class Piggy(PiggyParent):
         # New Dance 
             #self.chacha_slide ()
             #self.backward_shuffle()
-            #self.twist_otherway()
+            #self.twist_move()
             #self.forward_shuffle()
             #self.headwhip()
 
     def chacha_slide(self):
+        """This is a new move to try and replicate the chacha slide"""
         for x in range(1):
             self.turn_to_deg(90)
             time.sleep(.1)
@@ -93,21 +94,48 @@ class Piggy(PiggyParent):
             self.stop()
 
     def backward_shuffle(self):
+        """This is a dance that will make the robot move back aand shake at the same time"""
+        #The shuffle is 12 because that way it shakes for a decent amount of time 
         for x in range(12):
             self.right(primary=-60, counter=0)
             time.sleep(.1)
             self.left(primary=-60, counter=0)
             time.sleep(.1)
         self.turn_by_deg(180)
+        #Then it turns 180 degrees and does the same backward shuffle 
         for x in range(12):
             self.right(primary=-60, counter=0)
             time.sleep(.1)
             self.left(primary=-60, counter=0)
             time.sleep(.1)
-
         time.sleep(.1)
         self.stop()
-   
+  
+    def twist_move(self): 
+        for x in range(3): 
+            self.fwd()
+            time.sleep(.1)
+            self.stop()
+            time.sleep(.1)
+        self.fwd()
+        time.sleep(.5) 
+        self.servo(1800)
+        time.sleep(.1)
+        self.servo(1200)
+        time.sleep(.1)
+        self.right(primary= 50, counter= 0)
+        time.sleep(.3) 
+        self.back()
+        time.sleep(.5)
+        self.servo(1200)
+        time.sleep(.1)
+        self.servo(1800)
+        time.sleep(.1)
+        self.left(primary= 50, counter= 0)
+        time.sleep(.5)
+        self.stop()
+
+
 
 
 
