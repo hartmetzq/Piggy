@@ -61,6 +61,8 @@ class Piggy(PiggyParent):
         
         if not self.safe_to_dance():
             return False # Shut it down 
+        self.chacha_slide()
+        self.backward_shuffle() 
         self.twist_move()
         
         
@@ -122,7 +124,7 @@ class Piggy(PiggyParent):
         self.fwd()
         time.sleep(1) 
         self.servo(1800)
-        time.sleep(.1)
+        time.sleep(.5)
         self.servo(1200)
         time.sleep(.1)
         self.turn_by_deg(180)
@@ -132,7 +134,7 @@ class Piggy(PiggyParent):
         self.back()
         time.sleep(.5)
         self.servo(1200)
-        time.sleep(.1)
+        time.sleep(.5)
         self.servo(1800)
         time.sleep(.1)
         self.turn_by_deg(180)
