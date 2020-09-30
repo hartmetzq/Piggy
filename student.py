@@ -61,9 +61,7 @@ class Piggy(PiggyParent):
         
         if not self.safe_to_dance():
             return False # Shut it down 
-        self.chacha_slide()
-        self.backward_shuffle() 
-        self.twist_move()
+        self.headwhip()
         
         
         # New Dance 
@@ -142,6 +140,39 @@ class Piggy(PiggyParent):
         self.turn_to_deg(180)
         time.sleep(.1)
         self.stop()
+
+    def headwhip(self): 
+        for x in range(1): 
+            self. fwd()
+            time.sleep(.1)
+            for x in range(3):
+                self.servo(1900)
+                time.sleep(.2)
+                self.servo(1050)
+                time.sleep(.1)
+            self.back()
+            time.sleep(.1)
+            for x in range(3):
+                self.servo(1900)
+                time.sleep(.2)
+                self.servo(1050)
+                time.sleep(.1)
+            self.left(primary=50, counter= 0)
+            time.sleep(.5)
+            for x in range(3):
+                self.servo(1900)
+                time.sleep(.2)
+                self.servo(1050)
+                time.sleep(.1)
+            self.right(primary=50, counter= 0)
+            time.sleep(.5)
+            for x in range(3):
+                self.servo(1900)
+                time.sleep(.2)
+                self.servo(1050)
+                time.sleep(.1)
+            self.stop()
+
 
 
 
