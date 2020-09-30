@@ -151,9 +151,9 @@ class Piggy(PiggyParent):
                 self.servo(1050)
                 time.sleep(.1)
             self.turn_by_deg(180)
-            time.sleep(.5)
+            time.sleep(.01)
             self.turn_by_deg(180)
-            time.sleep(.5)
+            time.sleep(.01)
             for x in range(3):
                 self.servo(1900)
                 time.sleep(.2)
@@ -167,9 +167,9 @@ class Piggy(PiggyParent):
                 self.servo(1050)
                 time.sleep(.1)
             self.turn_by_deg(180)
-            time.sleep(.5)
+            time.sleep(.01)
             self.turn_by_deg(180)
-            time.sleep(.5)
+            time.sleep(.01)
             for x in range(3):
                 self.servo(1900)
                 time.sleep(.2)
