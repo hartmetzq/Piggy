@@ -105,8 +105,7 @@ class Piggy(PiggyParent):
             time.sleep(.1)
             self.left(primary=-60, counter=0)
             time.sleep(.1)
-        self.turn_by_deg(180)
-        #Then it turns 180 degrees and does the same backward shuffle 
+        #Then it stops and proceeds to do the same thing forward
         for x in range(12):
             self.right(primary=60, counter=0)
             time.sleep(.1)
@@ -181,19 +180,17 @@ class Piggy(PiggyParent):
     #forward shuffle code taken from Hayden 
     def forward_shuffle(self): 
         for x in range(6):
-            self.right(primary=-70, counter=-30)
-            time.sleep(.5)
-            self.left(primary=-70, counter=-30)
-            time.sleep(.5)
-        self.turn_by_deg(180)
-        time.sleep(.01)
+            self.right(primary=-90, counter=-30)
+            time.sleep(.7)
+            self.left(primary=-90, counter=-30)
+            time.sleep(.7)
         self.turn_by_deg(180)
         time.sleep(.01)
         for x in range(6):
-            self.right(primary=70, counter=30)
-            time.sleep(.5)
-            self.left(primary=70, counter=30)
-            time.sleep(.5)
+            self.right(primary=90, counter=30)
+            time.sleep(.7)
+            self.left(primary=90, counter=30)
+            time.sleep(.7)
         self.stop()
 
 
