@@ -61,10 +61,9 @@ class Piggy(PiggyParent):
         
         if not self.safe_to_dance():
             return False # Shut it down 
-        self.chacha_slide()
+    
         self.backward_shuffle()
-        self.twist_move()
-        self.headwhip()
+        self.forward_shuffle()
 
         
         
@@ -109,11 +108,10 @@ class Piggy(PiggyParent):
         self.turn_by_deg(180)
         #Then it turns 180 degrees and does the same backward shuffle 
         for x in range(12):
-            self.right(primary=-60, counter=0)
+            self.right(primary=60, counter=0)
             time.sleep(.1)
-            self.left(primary=-60, counter=0)
+            self.left(primary=60, counter=0)
             time.sleep(.1)
-        time.sleep(.1)
         self.stop()
   
     def twist_move(self): 
@@ -180,6 +178,24 @@ class Piggy(PiggyParent):
                 self.servo(1050)
                 time.sleep(.1)
             self.stop()
+    #forward shuffle code taken from Hayden 
+    def forward_shuffle(self): 
+        for x in range(6):
+            self.right(primary=-70, counter=-30)
+            time.sleep(.5)
+            self.left(primary=-70, counter=-30)
+            time.sleep(.5)
+        self.turn_by_deg(180)
+        time.sleep(.01)
+        self.turn_by_deg(180)
+        time.sleep(.01)
+        for x in range(6):
+            self.right(primary=70, counter=30)
+            time.sleep(.5)
+            self.left(primary=70, counter=30)
+            time.sleep(.5)
+        self.stop()
+
 
 
 
