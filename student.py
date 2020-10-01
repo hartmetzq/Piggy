@@ -78,6 +78,7 @@ class Piggy(PiggyParent):
 
     def chacha_slide(self):
         """This is a new move to try and replicate the chacha slide"""
+        # Try to replicate the chacha slide in the loop which goes through once 
         for x in range(1):
             self.turn_to_deg(90)
             time.sleep(.1)
@@ -116,12 +117,14 @@ class Piggy(PiggyParent):
         self.stop()
   
     def twist_move(self): 
-        #tom remind him the head does not turn 
+        """Dance to demonstrate the use of twirling and turning head"""
+        # Loop of the robot moving forward 
         for x in range(6): 
             self.fwd()
             time.sleep(.1)
             self.stop()
             time.sleep(.1)
+        # Then proceeds to twist in different directions and turn its head 
         self.fwd()
         time.sleep(1) 
         self.servo(1800)
@@ -145,23 +148,29 @@ class Piggy(PiggyParent):
         self.stop()
 
     def headwhip(self): 
+        """This move shows the robots ability to look around and do different moves at the same time"""
+        #first loop has it move forward
         for x in range(1): 
             self. fwd()
             time.sleep(.1)
+            #This loop is the head shaking no 
             for x in range(3):
                 self.servo(1900)
                 time.sleep(.2)
                 self.servo(1050)
                 time.sleep(.1)
+            # Does a 360 turn 
             self.turn_by_deg(180)
             time.sleep(.01)
             self.turn_by_deg(180)
             time.sleep(.01)
+            #Shakes his head again in the no motion 
             for x in range(3):
                 self.servo(1900)
                 time.sleep(.2)
                 self.servo(1050)
                 time.sleep(.1)
+            # Moves back and shakes head which is in the loop 
             self.back()
             time.sleep(.5)
             for x in range(3):
@@ -169,6 +178,7 @@ class Piggy(PiggyParent):
                 time.sleep(.2)
                 self.servo(1050)
                 time.sleep(.1)
+            # Does another 360 while shaking head which is shown in loop 
             self.turn_by_deg(180)
             time.sleep(.01)
             self.turn_by_deg(180)
@@ -179,21 +189,27 @@ class Piggy(PiggyParent):
                 self.servo(1050)
                 time.sleep(.1)
             self.stop()
-    #forward shuffle code taken from Hayden 
+
+#forward shuffle code taken from Hayden 
     def forward_shuffle(self): 
+        """ This move is a snake backwards smoothy then stip and do it forward"""
+        # First loop is the snake motion bakward 
         for x in range(6):
             self.right(primary=-90, counter=-30)
             time.sleep(.7)
             self.left(primary=-90, counter=-30)
             time.sleep(.7)
+        # Stop and turn by 180 degrees 
         self.turn_by_deg(180)
         time.sleep(.01)
+        # This loop shows the snake move going forward 
         for x in range(6):
             self.right(primary=90, counter=30)
             time.sleep(.7)
             self.left(primary=90, counter=30)
             time.sleep(.7)
         self.stop()
+        # The end of the dance 
 
 
 
