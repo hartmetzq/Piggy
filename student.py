@@ -61,11 +61,12 @@ class Piggy(PiggyParent):
         
         if not self.safe_to_dance():
             return False # Shut it down 
-        self.chacha_slide()
-        self.backward_shuffle()
-        self.twist_move()
-        self.headwhip()
-        self.forward_shuffle()
+        for x in range(10):
+            self.chacha_slide()
+            self.backward_shuffle()
+            self.twist_move()
+            self.headwhip()
+            self.forward_shuffle()
 
         
         
