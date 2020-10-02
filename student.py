@@ -61,7 +61,7 @@ class Piggy(PiggyParent):
         
         if not self.safe_to_dance():
             return False # Shut it down 
-        for x in range(10):
+        for x in range(2):
             self.chacha_slide()
             self.backward_shuffle()
             self.twist_move()
