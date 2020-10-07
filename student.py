@@ -303,7 +303,7 @@ class Piggy(PiggyParent):
         while True: 
             if not self.quick_check():
                 self.stop()
-                self.turn_until_clear()s
+                self.turn_until_clear()
             else: 
                 self.fwd()
                 
