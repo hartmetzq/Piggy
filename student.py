@@ -1,4 +1,5 @@
 #!/usr/bin python3
+from collections import OrderedDict
 from teacher import PiggyParent
 import sys
 import time
@@ -269,10 +270,12 @@ class Piggy(PiggyParent):
         """Does a 360 scan and returns the number of obstacles it sees"""
         # do a scan of area in front of robot 
         self.scan()
+        # sort the scan data for easier analysis 
+        self.scan_data = OrderedDict(sorted(self.scan_data.items()))
         # print the results 
         for angle in self.scan_data: 
             dist = self.scan_data[angle] 
-            print("ANGLE: %d | DIST: %d %" (angle,dist))
+            print("ANGLE: %d | DIST: %d %" (angle, dist))
         
 
     def quick_check(self):
