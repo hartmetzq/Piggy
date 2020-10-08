@@ -275,7 +275,7 @@ class Piggy(PiggyParent):
         # print the results 
         for angle in self.scan_data: 
             dist = self.scan_data[angle] 
-            print("ANGLE: %d | DIST: %d %" (angle, dist))
+            print("ANGLE: %d | DIST: %d" % (angle, dist))
         
 
     def quick_check(self):
