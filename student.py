@@ -267,7 +267,12 @@ class Piggy(PiggyParent):
 
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
-        pass
+        # do a scan of area in front of robot 
+        self.scan()
+        # print the results 
+        for angle, dist in enumerate(self.scan_data): 
+            print("ANGLE: %d | DIST: %d %" (angle,dist))
+        
 
     def quick_check(self):
         """ Moves the servo to three angles and performs a distance check"""
@@ -279,6 +284,7 @@ class Piggy(PiggyParent):
                 return False 
         # if the 3 part check did not freak out 
         return True
+   
     def turn_until_clear(self):
         """Rotate right until no obsatacle is seen"""
         print("----!!! TURNING UNTIL CLEAR !!! ------")
