@@ -287,7 +287,7 @@ class Piggy(PiggyParent):
                 print("I guess the object is gone")
            
             print("ANGLE: %d | DIST: %d" % (angle, dist))
-        print("\nI saw %d objects" & count)
+        print("\nI saw %d objects" % count)
 
     def quick_check(self):
         """ Moves the servo to three angles and performs a distance check"""
