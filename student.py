@@ -265,18 +265,29 @@ class Piggy(PiggyParent):
         for angle in range(self.MIDPOINT-350, self.MIDPOINT+350, 10):
             self.servo(angle)
             self.scan_data[angle] = self.read_distance()
+        # sort the scan data for easier analysis 
+        self.scan_data = OrderedDict(sorted(self.scan_data.items()))
 
     def obstacle_count(self):
         """Does a 360 scan and returns the number of obstacles it sees"""
         # do a scan of area in front of robot 
         self.scan()
-        # sort the scan data for easier analysis 
-        self.scan_data = OrderedDict(sorted(self.scan_data.items()))
+        # FIGURE OUT HOW MANY OBSTACLES THERE WERE 
+        see_an_object = False 
+        count = 0 
         # print the results 
         for angle in self.scan_data: 
             dist = self.scan_data[angle] 
+            if dist < self.SAFE_DISTANCE and not see_an_object:
+                see_an_object = True 
+                count += 1 
+                print("~~~ I SEE SOMETHING ~~~")
+            elif dist > self.SAFE_DISTANCE and see_an_object:
+                see_an_object = False 
+                print("I guess the object is gone")
+           
             print("ANGLE: %d | DIST: %d" % (angle, dist))
-        
+        print("\nI saw %d objects" & count)
 
     def quick_check(self):
         """ Moves the servo to three angles and performs a distance check"""
