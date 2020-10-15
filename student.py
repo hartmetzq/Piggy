@@ -18,9 +18,9 @@ class Piggy(PiggyParent):
         ''' 
         MAGIC NUMBERS <-- where we hard-code our settings
         '''
-        self.LEFT_DEFAULT = 95
-        self.RIGHT_DEFAULT = 100
-        self.SAFE_DISTANCE = 300
+        self.LEFT_DEFAULT = 80
+        self.RIGHT_DEFAULT = 85
+        self.SAFE_DISTANCE = 200
         self.CLOSE_DISTANCE = 150
         self.MIDPOINT = 1550  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
@@ -352,15 +352,23 @@ class Piggy(PiggyParent):
         
         # TODO: build self.quick_check() that does a fast, 3-part check instead of read_distance
     
-        while True: 
-            if not self.quick_check():
+        exit_ang = self.get_heading()
+        # because I've written down the exit's angle, at anytime I can use:
+        # self.turn_to_deg(exit_ang)
+        turn_count = 0
+
+        while True:
+            if not self.quick_check(): 
+                turn_count += 1
                 self.stop()
-                #self.turn_until_clear()
-                if 'l' in self.right_or_left():
+                # self.turn_until_clear()
+                if turn_count > 3 and turn_count % 5 == 0:
+                    self.back()
+                elif 'l' in self.right_or_left():
                     self.turn_by_deg(-45)
                 else: 
                     self.turn_by_deg(45)
-            else: 
+            else:
                 self.fwd()
                 
         self.stop()
