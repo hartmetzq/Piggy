@@ -20,7 +20,7 @@ class Piggy(PiggyParent):
         '''
         self.LEFT_DEFAULT = 85
         self.RIGHT_DEFAULT = 85
-        self.SAFE_DISTANCE = 200
+        self.SAFE_DISTANCE = 250
         self.CLOSE_DISTANCE = 150
         self.MIDPOINT = 1500  # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
@@ -361,11 +361,14 @@ class Piggy(PiggyParent):
             if not self.quick_check(): 
                 turn_count += 1
                 self.stop()
+                time.sleep(.01)
+                self.back()
+                time.sleep(1)
+                self.stop()
                 # self.turn_until_clear()
                 if turn_count > 3 and turn_count % 2 == 0:
-                    self.back()
-                    time.sleep(.5)
-                    self.stop()
+                    self.turn_to_deg(exit_ang)
+
                 elif 'l' in self.right_or_left():
                     self.turn_by_deg(-45)
                 else: 
