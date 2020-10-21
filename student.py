@@ -370,9 +370,9 @@ class Piggy(PiggyParent):
                     self.turn_to_deg(exit_ang)
 
                 elif 'l' in self.right_or_left():
-                    self.turn_by_deg(-45)
+                    self.turn_by_deg(-30)
                 else: 
-                    self.turn_by_deg(45)
+                    self.turn_by_deg(30)
             else:
                 self.fwd()
                 
